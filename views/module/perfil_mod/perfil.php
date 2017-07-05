@@ -1,7 +1,7 @@
 	<ul id="accordion" class="accordion">
     <li>
     <div class="col col_4 iamgurdeep-pic">
-    <img class="img-responsive profileimg" alt="profileimg" src="http://www.hollywoodreporter.com/sites/default/files/custom/Meena/THR_Will_Smith_9872_01_0296_embed.jpg">
+    <img class="img-responsive profileimg" alt="profileimg" src="views/assets/img/usuario/<?php echo $usuario['usu_imagen']; ?>">
     <div class="username">
     <h2>Alexander Oquendo <small><i class="fa fa-map-marker"></i> Colombia (Medellín)</small></h2>
     <p><i class="fa fa-check-circle"></i> Donante.</p>

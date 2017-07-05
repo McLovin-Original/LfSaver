@@ -69,6 +69,19 @@ class UsuModel{
       DataBase::errorLog($cod,$file,$line,$text);
     }
   }
+  public function updateUsuarioById2($data){
+    try {
+      $sql = "UPDATE usuario SET usu_peso = ?,usu_altura = ? WHERE usu_id= ?";
+      $query = $this->pdo->prepare($sql);
+      $query->execute(array($data[0],$data[1],$data[2]));
+    } catch (PDOException $e) {
+      $cod = $e->getCod();
+      $file = $e->getFile();
+      $line = $e->getLine();
+      $text = $e->getMessage();
+      DataBase::errorLog($cod,$file,$line,$text);
+    }
+  }
 
 /*  public function mail($correo){
     $email = new PHPMailer;

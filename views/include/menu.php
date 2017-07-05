@@ -1,6 +1,8 @@
 <?php
+require_once("model/usu.model.php");
+$UsuarioM = new UsuModel();
 $correo[0]=$_SESSION["user"]["email"];
-$usuario = $this->UsuarioM->readUsuariobyEmail($correo);
+$usuario = $UsuarioM->readUsuariobyEmail($correo);
  ?>
 <body class="home">
     <div class="container-fluid display-table">

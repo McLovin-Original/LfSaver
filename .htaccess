@@ -13,6 +13,8 @@ RewriteRule ^validacion$     ?c=usu&a=userAut
 RewriteRule ^CerrarSesion$   ?c=usu&a=logout
 RewriteRule ^completar$      ?c=usu&a=completar1
 RewriteRule ^completar1$     ?c=usu&a=crearCompletar1
+RewriteRule ^completar2$     ?c=usu&a=crearCompletar2
+RewriteRule ^completar3$     ?c=usu&a=crearCompletar3
 RewriteRule ^recover$        ?c=usu&a=recoverPass
 RewriteRule ^valCorreo$      ?c=usu&a=validarEmail
 RewriteRule ^recover/email$  ?c=usu&a=recover

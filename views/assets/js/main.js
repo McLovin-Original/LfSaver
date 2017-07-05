@@ -11,7 +11,7 @@ function abrircompletar3() {
   this.completar3.style.transform = "translateX(450px)";
   this.completar3.style.transition = "0.5s";
 }
-//---------------CREAR USUARIO
+//---------------COMPLETAR1 USUARIO
 $("#frm_completar1").submit(function(e){
   e.preventDefault();
   if ($(this).parsley().isValid()){
@@ -23,6 +23,24 @@ $("#frm_completar1").submit(function(e){
       var data = JSON.parse(data);
       if (data[0]==true) {
         abrircompletar2();
+      }else{
+        alert(data[1]);
+      }
+    });
+  }
+});
+//---------------COMPLETAR1 USUARIO
+$("#frm_completar2").submit(function(e){
+  e.preventDefault();
+  if ($(this).parsley().isValid()){
+    var datacomp2=[$("#peso_comp2").val(),
+                   $("#altu_comp2").val()];
+                   alert(datacomp2[0]);
+                   alert(datacomp2[1]);
+    $.post("completar2",{datacomp2:datacomp2},function(data){
+      var data = JSON.parse(data);
+      if (data[0]==true) {
+        abrircompletar3();
       }else{
         alert(data[1]);
       }

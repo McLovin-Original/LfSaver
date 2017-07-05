@@ -86,15 +86,24 @@ class UsuController{
     }
     echo json_encode($return);
   }
-  public function completar2(){
-    require_once 'views/include/header.php';
-    require_once 'views/module/usu_mod/completar/completar2.php';
-    require_once 'views/include/footer.php';
-  }
-  public function completar3(){
-    require_once 'views/include/header.php';
-    require_once 'views/module/usu_mod/completar/completar3.php';
-    require_once 'views/include/footer.php';
+  public function crearCompletar2(){
+    $data = $_POST["datacomp2"];
+    for ($i=0; $i <count($data) ; $i++) {
+      if (empty($data[$i])) {
+        $p=1;
+        break;
+      }else{
+        $p=0;
+      }
+    }
+    if ($p==1) {
+      $return = array(false,"campos nulos");
+    }else{
+      $data[2]=$_SESSION["user"]["id"];
+      $result=$this->UsuarioM->updateUsuarioById2($data);
+      $return = array(true,"");
+    }
+    echo json_encode($return);
   }
 
 // Crear cuenta
