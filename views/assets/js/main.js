@@ -29,18 +29,34 @@ $("#frm_completar1").submit(function(e){
     });
   }
 });
-//---------------COMPLETAR1 USUARIO
+//---------------COMPLETAR2 USUARIO
 $("#frm_completar2").submit(function(e){
   e.preventDefault();
   if ($(this).parsley().isValid()){
     var datacomp2=[$("#peso_comp2").val(),
                    $("#altu_comp2").val()];
-                   alert(datacomp2[0]);
-                   alert(datacomp2[1]);
     $.post("completar2",{datacomp2:datacomp2},function(data){
       var data = JSON.parse(data);
       if (data[0]==true) {
         abrircompletar3();
+      }else{
+        alert(data[1]);
+      }
+    });
+  }
+});
+//---------------COMPLETAR3 USUARIO
+$("#frm_completar3").submit(function(e){
+  e.preventDefault();
+  if ($(this).parsley().isValid()){
+    var datacomp3=$("#nume_comp3").val();
+    if (datacomp3.length==0) {
+      datacomp3="NO";
+    }
+    $.post("completar3",{datacomp3:datacomp3},function(data){
+      var data = JSON.parse(data);
+      if (data[0]==true) {
+        document.location.href=data[1];
       }else{
         alert(data[1]);
       }

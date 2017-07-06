@@ -1,7 +1,7 @@
+<form class="" action="" id="frm_completar3" method="post">
 <div class="top-content7 col-xs-12 col-sm-12 col-md-7 col-lg-8" id="completar3">
   <h2 class="login">Completa tu perfil</h2>
   <div class="col-sm-5 col-sm-offset-1 completar-perfil-3" >
-    <form role="form" action="crear" method="post" id="completar" class="r-form">
       <h3 class="text-justify info-title">Información Médica</h3>
 
         <label class="text-justify">¿Cuenta con carnet de afiliación médica? </label>
@@ -9,9 +9,8 @@
           <button type="button" id="no"class="btn btn-info col-lg-2 col-md-2 col-sm-2">NO</button>
 
       <div class="button-gay col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <button type="submit" name="button" id="btnCompletar" class="btn btn-primary completar3 col-lg-6 col-md-6 col-sm-6" >TERMINAR <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+        <button type="submit" name="submit" id="btnCompletar" class="btn btn-primary completar3 col-lg-6 col-md-6 col-sm-6" >TERMINAR <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
       </div>
-    </form>
   </div>
 </div>
 
@@ -23,16 +22,15 @@
 
         <h4 class="modal-title">Ingrese el número carnet.</h4>
       </div>
+      <form class="" action="" id="frm_completar3" method="post">
       <div class="modal-body">
         <div class="form-group">
           <label class="sr-only">Número</label>
-          <input type="text" class="r-form-Usuario form-control altura" name="data[]" id="" placeholder="Número del carnet." required>
-          <button type="submit" name="button" class="btn btn-primary guardar-numero col-lg-4 col-md-4 col-sm-4" > Guardar</button>
+          <input type="text" class="r-form-Usuario form-control altura" name="" id="nume_comp3" placeholder="Número del carnet.">
+          <button type="button" id="cerrar" data-dismiss="modal" name="button" class="btn btn-primary guardar-numero col-lg-4 col-md-4 col-sm-4" > Guardar</button>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" id="cerrar" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times-circle fa-2x" aria-hidden="true"></i></button>
-      </div>
+    </form>   
     </div>
   </div>
 </div>

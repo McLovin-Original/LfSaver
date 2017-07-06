@@ -105,6 +105,27 @@ class UsuController{
     }
     echo json_encode($return);
   }
+  public function crearCompletar3(){
+    $data[0] = $_POST["datacomp3"];
+    if ($data[0]!="NO") {
+      if (preg_match('`[a-z]`',$data[0])) {
+        $p=0;
+      }else{
+        $p=1;
+      }
+    }else{
+      $p=1;
+    }
+    if ($p==0) {
+      $return = array(false,"Documento Invalido");
+    }else{
+      $data[1]=$_SESSION["user"]["id"];
+      $result=$this->UsuarioM->updateUsuarioById3($data);
+      $result=$this->UsuarioM->updateTour($data);
+      $return = array(true,"dashboard");
+    }
+    echo json_encode($return);
+  }
 
 // Crear cuenta
   /*public function create(){
