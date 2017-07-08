@@ -9,7 +9,7 @@
 			<img class="img-responsive profileimg" alt="profileimg" src="views/assets/img/usuario/<?php echo $usuario['usu_id']."/".$usuario['usu_imagen']; ?>">
 	<?php  } ?>
     <div class="username">
-    <h2>Alexander Oquendo <small><i class="fa fa-map-marker"></i> Colombia (Medellín)</small></h2>
+    <h2><?php echo $usuario["usu_nombre"]; ?> <small><i class="fa fa-map-marker"></i> Colombia (Medellín)</small></h2>
     <p><i class="fa fa-check-circle"></i> Donante.</p>
 		<form class="" action="crear-imagen" method="post" enctype="multipart/form-data">
     	<input type="file" target="_blank" class="btn-o" name="img">
@@ -31,10 +31,13 @@
 		<li>
 			<div class="link"><i class="fa fa-user"></i>Acerca de mí<i class="fa fa-chevron-down"></i></div>
 			<ul class="submenu">
-				<li><a>Fecha de nacimiento: <span>31 de Febrero de 1997</span></a></li>
-        <li><a>Dirección: <span>Calle 75 sur # 54 a 241</span></a></li>
-				<li><a>Correo Electrónico: <span>evasquez70@misena.edu.co</span></a></li>
-        <li><a>Número Telefónico: <span>301 685 4417</span></a></li>
+				<form class="" action="actualizar1" method="post">
+				<li>Fecha de nacimiento: <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_nacimiento']; ?>"></li>
+				<li>Dirección:           <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_direccion']; ?>"></li>
+				<li>Correo Electrónico:  <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['acc_email']; ?>"></li>
+				<li>Número Telefónico:   <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_telefono'] ?>"></li>
+				<button target="_blank"  class="btn-o" type="submit" name="button">Actualizar</button>
+			</form>
 			</ul>
 		</li>
 		<li>
