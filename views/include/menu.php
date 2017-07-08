@@ -75,7 +75,14 @@ $usuario = $UsuarioM->readUsuariobyEmail($correo);
                             <div class="header-rightside">
                                 <ul class="list-inline header-top pull-right">
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="views/assets/img/usuario/<?php echo $usuario['usu_imagen']; ?>" alt="user">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <?php if ($usuario["usu_imagen"]==="default.png") {
+                                            # code...?>
+                                              <img src="views/assets/img/usuario/<?php echo $usuario['usu_imagen']; ?>" alt="user">
+                                            <?php  }else{
+                                              ?>
+                                              <img src="views/assets/img/usuario/<?php echo $usuario['usu_id']."/".$usuario['usu_imagen']; ?>" alt="user">
+                                          <?php  } ?>
                                             <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li>

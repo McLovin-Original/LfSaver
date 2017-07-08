@@ -52,6 +52,37 @@ class UsuController{
     }
       echo json_encode($return);
   }
+  public function imagen(){
+    $flag = false;
+    $folder=$_SESSION["user"]["id"];
+    $tmp = $_FILES['img']['tmp_name'];
+    $pathImage = "views/assets/img/usuario/".$folder."/";
+    if(!is_dir($pathImage)){
+      mkdir($pathImage,0777);
+    }
+    if($tmp != ""){
+       $Event =  $pathImage.$_FILES['img']['name'];
+       $flag = true;
+    }else{
+       $flag = false;
+    }
+    if($flag == true){
+      if(move_uploaded_file($tmp, $Event)) {
+        echo "<script>console.log('Los archivos se subieron correctamente!')</script>";
+      }else{
+        echo "<script>console.log('Los archivos se subieron mal!')</script>";
+      }
+    }
+    $data[0]=$_SESSION["user"]["email"];
+    $data[1]=$_FILES["img"]["name"];
+    $data[2]=$_SESSION["user"]["id"];
+    $ruta=$this->UsuarioM->readUsuariobyEmail($data);
+    $dir=$ruta["usu_imagen"];
+    if ($dir!=="default.png") {
+      unlink("views/assets/img/usuario/$folder/$dir");
+    }
+    $this->UsuarioM->usuarioImagen($data);
+  }
   public function recoverPass(){
     require_once 'views/include/header.php';
     require_once 'views/module/usu_mod/recuperar.php';

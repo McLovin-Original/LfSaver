@@ -1,12 +1,21 @@
 	<ul id="accordion" class="accordion">
     <li>
     <div class="col col_4 iamgurdeep-pic">
-    <img class="img-responsive profileimg" alt="profileimg" src="views/assets/img/usuario/<?php echo $usuario['usu_imagen']; ?>">
+		<?php if ($usuario["usu_imagen"]==="default.png") {
+		# code...?>
+			<img class="	img-responsive profileimg" alt="profileimg" src="views/assets/img/usuario/<?php echo $usuario['usu_imagen']; ?>">
+		<?php  }else{
+			?>
+			<img class="img-responsive profileimg" alt="profileimg" src="views/assets/img/usuario/<?php echo $usuario['usu_id']."/".$usuario['usu_imagen']; ?>">
+	<?php  } ?>
     <div class="username">
     <h2>Alexander Oquendo <small><i class="fa fa-map-marker"></i> Colombia (Medellín)</small></h2>
     <p><i class="fa fa-check-circle"></i> Donante.</p>
-    <a href="" target="_blank" class="btn-o"> <i class="fa fa-user-plus"></i> Nueva Imagen </a>
-    <a href="" target="_blank"  class="btn-o"> <i class="fa fa-plus"></i> Subir </a>
+		<form class="" action="crear-imagen" method="post" enctype="multipart/form-data">
+    	<input type="file" target="_blank" class="btn-o" name="img">
+			<!--<a href="" target="_blank"  class="btn-o"> <i class="fa fa-plus"></i> Subir </a>-->
+			<button type="submit" target="_blank"  class="btn-o"> <i class="fa fa-plus"></i> Subir </button>
+		</form>
      <ul class="nav navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v pull-right"></span></a>
