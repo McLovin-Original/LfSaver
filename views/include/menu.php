@@ -46,8 +46,8 @@ $usuario = $UsuarioM->readUsuariobyEmail($correo);
                         <h3 class="ca-sub">Personalizalo</h3></a></li>
                         <li><a href="#"></span>
                           <div class="ca-content">
-                            <i class="fa fa-cog ca-icon" aria-hidden="true"></i><span class="hidden-xs hidden-sm">
-                            <h2 class="ca-main">Ajustes</h2>
+                            <i class="fa fa-hospital-o ca-icon" aria-hidden="true"></i><span class="hidden-xs hidden-sm">
+                            <h2 class="ca-main">Clinica</h2>
                           </div></a></li>
                     </ul>
                 </div>
@@ -67,9 +67,6 @@ $usuario = $UsuarioM->readUsuariobyEmail($correo);
                                     </button>
                                 </div>
                             </nav>
-                            <div class="search hidden-xs hidden-sm">
-                                <input type="text" placeholder="Buscar" id="search">
-                            </div>
                         </div>
                         <div class="col-md-5">
                             <div class="header-rightside">
@@ -87,9 +84,9 @@ $usuario = $UsuarioM->readUsuariobyEmail($correo);
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <div class="navbar-content">
-                                                    <span>Jhony Oquendo</span>
+                                                    <span><?php echo $usuario["usu_nombre"]; ?></span>
                                                     <p class="text-muted small">
-                                                        jaoquendo9@misena.edu.co
+                                                        <?php echo $usuario["acc_email"]; ?>
                                                     </p>
                                                     <div class="divider">
                                                     </div>
