@@ -43,10 +43,19 @@
 		<li>
 			<div class="link"><i class="fa fa-male"></i>Información Física<i class="fa fa-chevron-down"></i></div>
 			<ul class="submenu">
-        <li><a>Edad: <span>19</span></a></li>
-        <li><a>Altura: <span>1 metro 70 centimentros</span></a></li>
-				<li><a>Peso: <span>65 kilos</span></a></li>
-        <li><a>IMC (Peso/(altura)^2): <span>23.88</span></a></li>
+				<form class="" action="actualizar2" method="post">
+					<li>Edad: <span>
+						<?php
+							$fecha1=date('Ymd');
+							$fecha2 = $usuario['usu_nacimiento'];
+							$edad = strtotime($fecha1)-strtotime($fecha2);
+							$diferencia = intval($edad/60/60/24/365.23);
+							echo $diferencia;
+						?></span></li>
+	        <li>Altura: <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_altura']; ?>"></li>
+					<li>Peso: <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_peso']; ?>"></li>
+					<button target="_blank"  class="btn-o" type="submit" name="button">Actualizar</button>
+				<form>
 			</ul>
 		</li>
 		<li>
