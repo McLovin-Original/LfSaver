@@ -58,9 +58,9 @@ class UsuModel{
   }
   public function updateUsuarioById($data){
     try {
-      $sql = "UPDATE usuario SET usu_tipo = ?,usu_documento = ?,usu_direccion = ?,usu_telefono = ? WHERE usu_id= ?";
+      $sql = "UPDATE usuario SET usu_tipo = ?,usu_documento = ?,usu_direccion = ?,usu_telefono = ?,usu_nacimiento = ? WHERE usu_id= ?";
       $query = $this->pdo->prepare($sql);
-      $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4]));
+      $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5]));
     } catch (PDOException $e) {
       $cod = $e->getCod();
       $file = $e->getFile();

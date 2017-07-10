@@ -18,6 +18,8 @@ RewriteRule ^completar3$     ?c=usu&a=crearCompletar3
 RewriteRule ^actualizar1$     ?c=perfil&a=actualizar1
 RewriteRule ^actualizar2$     ?c=perfil&a=actualizar2
 RewriteRule ^actualizar4$     ?c=perfil&a=actualizar4
+RewriteRule ^mi_perfil-nulo$       ?c=perfil&msn=Campos_Nulos
+RewriteRule ^mi_perfil-pass$       ?c=perfil&msn=Contraseña_Invalida
 RewriteRule ^recover$        ?c=usu&a=recoverPass
 RewriteRule ^valCorreo$      ?c=usu&a=validarEmail
 RewriteRule ^recover/email$  ?c=usu&a=recover

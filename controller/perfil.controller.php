@@ -24,7 +24,7 @@ class PerfilController{
       }
     }
     if ($p==1) {
-      echo "<script>alert('Campos Nulos')</script>";
+      header("Location:mi_perfil-nulo");
     }else{
       $data[4]=$_SESSION["user"]["id"];
       $this->PerfilM->updateUsuario1($data);
@@ -42,7 +42,7 @@ class PerfilController{
       }
     }
     if ($p==1) {
-      echo "<script>alert('Campos Nulos')</script>";
+      header("Location:mi_perfil-nulo");
     }else{
       $data[2]=$_SESSION["user"]["id"];
       $this->PerfilM->updateUsuario2($data);
@@ -50,10 +50,7 @@ class PerfilController{
     }
   }
   public function actualizar4(){
-    //$data = $_POST["data"];
-    $data[0]="Juan Panlo";
-    $data[1]="ocgpablo98";
-    $data[2]="ocgpablo98";
+    $data = $_POST["data"];
     for ($i=0; $i <count($data) ; $i++) {
       if (empty($data[$i])) {
         $p=1;
@@ -63,12 +60,10 @@ class PerfilController{
       }
     }
     if ($p==1) {
-      echo "<script>alert('Campos Nulos')</script>";
-      //header("Location:mi_perfil");
+      header("Location:mi_perfil-nulo");
     }else{
       if (($data[1]!==$data[2]) || (strlen($data[1])<=8)) {
-        echo "o";
-        //header("Location:mi_perfil");
+        header("Location:mi_perfil-pass");
       }else{
         $data[1] = password_hash($data[1],PASSWORD_DEFAULT);
         $data[2]=$_SESSION["user"]["id"];

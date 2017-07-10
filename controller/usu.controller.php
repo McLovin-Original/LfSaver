@@ -111,7 +111,7 @@ class UsuController{
     if ($p==1) {
       $return = array(false,"campos nulos");
     }else{
-      $data[4]=$_SESSION["user"]["id"];
+      $data[5]=$_SESSION["user"]["id"];
       $result=$this->UsuarioM->updateUsuarioById($data);
       $return = array(true,"");
     }

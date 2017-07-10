@@ -32,7 +32,7 @@
 			<div class="link"><i class="fa fa-user"></i>Acerca de mí<i class="fa fa-chevron-down"></i></div>
 			<ul class="submenu">
 				<form class="" action="actualizar1" method="post">
-				<li>Fecha de nacimiento: <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_nacimiento']; ?>"></li>
+				<li>Fecha de nacimiento: <input type="date" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_nacimiento']; ?>"></li>
 				<li>Dirección:           <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_direccion']; ?>"></li>
 				<li>Correo Electrónico:  <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['acc_email']; ?>"></li>
 				<li>Número Telefónico:   <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_telefono'] ?>"></li>
@@ -55,7 +55,7 @@
 	        <li>Altura: <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_altura']; ?>"></li>
 					<li>Peso: <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_peso']; ?>"></li>
 					<button target="_blank"  class="btn-o" type="submit" name="button">Actualizar</button>
-				<form>
+				</form>
 			</ul>
 		</li>
 		<li>
