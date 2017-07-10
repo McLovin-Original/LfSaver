@@ -44,7 +44,12 @@ $usuario = $UsuarioM->readUsuariobyEmail($correo);
                             <h2 class="ca-main">Mi Perfil</h2>
                           </div>
                         <h3 class="ca-sub">Personalizalo</h3></a></li>
-                        <li><a href="#"></span>
+                        <?php if ($_SESSION["user"]["rol"]=="admin") {
+                          $url="gestionar-clinicas";
+                        }else{
+                          $url="clinicas";
+                        } ?>
+                        <li><a href="<?php echo $url ?>"></span>
                           <div class="ca-content">
                             <i class="fa fa-hospital-o ca-icon" aria-hidden="true"></i><span class="hidden-xs hidden-sm">
                             <h2 class="ca-main">Clinica</h2>

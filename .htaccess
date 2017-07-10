@@ -28,3 +28,5 @@ RewriteRule ^Save$           ?c=usu&a=token
 RewriteRule ^contacto$       ?c=contacto
 RewriteRule ^legislacion$    ?c=estatuto
 RewriteRule ^mi_perfil$      ?c=perfil
+RewriteRule ^clinicas$      ?c=clinica
+RewriteRule ^gestionar-clinicas$      ?c=clinica&a=gestionarClinica
