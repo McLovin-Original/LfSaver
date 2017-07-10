@@ -49,6 +49,33 @@ class PerfilController{
       header("Location:mi_perfil");
     }
   }
+  public function actualizar4(){
+    //$data = $_POST["data"];
+    $data[0]="Juan Panlo";
+    $data[1]="ocgpablo98";
+    $data[2]="ocgpablo98";
+    for ($i=0; $i <count($data) ; $i++) {
+      if (empty($data[$i])) {
+        $p=1;
+        break;
+      }else{
+        $p=0;
+      }
+    }
+    if ($p==1) {
+      echo "<script>alert('Campos Nulos')</script>";
+      //header("Location:mi_perfil");
+    }else{
+      if (($data[1]!==$data[2]) || (strlen($data[1])<=8)) {
+        echo "o";
+        //header("Location:mi_perfil");
+      }else{
+        $data[1] = password_hash($data[1],PASSWORD_DEFAULT);
+        $data[2]=$_SESSION["user"]["id"];
+        $this->PerfilM->updateUsuario4($data);
+      }
+    }
+  }
 }
 
 ?>

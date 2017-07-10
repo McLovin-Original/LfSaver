@@ -68,9 +68,12 @@
 		</li>
 		<li><div class="link"><i class="fa fa-cogs"></i>Configuración<i class="fa fa-chevron-down"></i></div>
 			<ul class="submenu">
-        <li><a>Nombre de Usuario: <span>JhonyAlexander07 </span></a></li>
-        <li><a>Cambio de contraseña</a></li>
-        <li><a>Acerca de LifeSaver</a></li>
+				<form class="" action="actualizar4" method="post">
+				<li>Nombre de Usuario: <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_nombre']; ?>"></li>
+				<li>Cambio de contraseña:<input type="password" name="data[]" style="background-color:#444359"></li>
+				<li>Repita su contraseña:  <input type="password" name="data[]" style="background-color:#444359"></li>
+				<button target="_blank"  class="btn-o" type="submit" name="button">Actualizar</button>
+			</form>
 	   </ul>
     </li>
   </ul>

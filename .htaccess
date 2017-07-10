@@ -17,6 +17,7 @@ RewriteRule ^completar2$     ?c=usu&a=crearCompletar2
 RewriteRule ^completar3$     ?c=usu&a=crearCompletar3
 RewriteRule ^actualizar1$     ?c=perfil&a=actualizar1
 RewriteRule ^actualizar2$     ?c=perfil&a=actualizar2
+RewriteRule ^actualizar4$     ?c=perfil&a=actualizar4
 RewriteRule ^recover$        ?c=usu&a=recoverPass
 RewriteRule ^valCorreo$      ?c=usu&a=validarEmail
 RewriteRule ^recover/email$  ?c=usu&a=recover
@@ -29,4 +30,6 @@ RewriteRule ^contacto$       ?c=contacto
 RewriteRule ^legislacion$    ?c=estatuto
 RewriteRule ^mi_perfil$      ?c=perfil
 RewriteRule ^clinicas$      ?c=clinica
+RewriteRule ^crear-clinica$      ?c=clinica&a=create
+RewriteRule ^update-clinica$      ?c=clinica&a=update
 RewriteRule ^gestionar-clinicas$      ?c=clinica&a=gestionarClinica

@@ -150,6 +150,22 @@ class UsuModel{
       DataBase::errorLog($cod,$file,$line,$text);
     }
   }
+  public function updateUsuario4($data){
+    try {
+      $sql = "UPDATE usuario SET usu_nombre = ? WHERE usu_id= ?";
+      $query = $this->pdo->prepare($sql);
+      $query->execute(array($data[0],$data[2]));
+      $sql = "UPDATE acceso SET acc_password = ? WHERE usu_id= ?";
+      $query = $this->pdo->prepare($sql);
+      $query->execute(array($data[1],$data[2]));
+    } catch (PDOException $e) {
+      $cod = $e->getCod();
+      $file = $e->getFile();
+      $line = $e->getLine();
+      $text = $e->getMessage();
+      DataBase::errorLog($cod,$file,$line,$text);
+    }
+  }
 
 /*  public function mail($correo){
     $email = new PHPMailer;

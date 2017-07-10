@@ -1,3 +1,6 @@
+$(document).ready(function(){
+    $('#table').DataTable();
+});
 // ================================Transición Completar Perfil===============================//
 
 var completar2 = document.getElementById('completar2');
@@ -79,6 +82,24 @@ $("#frm_registrar").submit(function(e){
       document.location.href=data[1];
     }else{
       alert(data[1]);
+    }
+  });
+  }
+});
+//---------------UPDATE CLINICA
+$("#uclinica").click(function(e){
+  e.preventDefault();
+  if ($(this).parsley().isValid()){
+    jsonObj = [];
+    $("input[name=data]").each(function(){
+      structure = {}
+      structure = $(this).val();
+      jsonObj.push(structure);
+    });
+    $.post("update-clinica",{dataclinica:jsonObj},function(data){
+    var data = JSON.parse(data);
+    if (data[0]==true) {
+      document.location.href=data[1];
     }
   });
   }
