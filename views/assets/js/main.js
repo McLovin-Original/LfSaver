@@ -38,7 +38,9 @@ $("#frm_completar2").submit(function(e){
   e.preventDefault();
   if ($(this).parsley().isValid()){
     var datacomp2=[$("#peso_comp2").val(),
-                   $("#altu_comp2").val()];
+                   $("#altu_comp2").val(),
+                   $("#rh_comp2").val(),
+                   $("#salu_comp2").val()];
     $.post("completar2",{datacomp2:datacomp2},function(data){
       var data = JSON.parse(data);
       if (data[0]==true) {

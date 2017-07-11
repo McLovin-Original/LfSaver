@@ -11,6 +11,25 @@
             <label class="sr-only">Altura</label>
             <input type="text" class="r-form-Usuario form-control altura" name="data[]" id="altu_comp2" placeholder="Altura (Centimetros)" required>
           </div>
+          <div class="form-group ">
+            <select class="form-control" id="rh_comp2" name="data[]" required>
+              <option class:"opcion" value="O-">O-</option>
+              <option class:"opcion" value="O+">O+</option>
+              <option class:"opcion" value="B-">B-</option>
+              <option class:"opcion" value="B+">B+</option>
+              <option class:"opcion" value="A-">A-</option>
+              <option class:"opcion" value="A+">A+</option>
+              <option class:"opcion" value="AB-">AB-</option>
+              <option class:"opcion" value="AB+">AB+</option>
+            </select>
+          </div>
+          <div class="form-group ">
+            <select class="form-control" id="salu_comp2" name="data[]" required>
+              <option class:"opcion" value="Enfermo">ENFERMO</option>
+              <option class:"opcion" value="Aceptable">ACEPTABLE</option>
+              <option class:"opcion" value="Regular">REGULAR</option>
+            </select>
+          </div>
           <button type="submit" name="button" id="btnCompletar" class="btn btn-primary">SIGUIENTE <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
         </form>
       </div>

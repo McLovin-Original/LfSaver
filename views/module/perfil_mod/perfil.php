@@ -16,15 +16,6 @@
 			<!--<a href="" target="_blank"  class="btn-o"> <i class="fa fa-plus"></i> Subir </a>-->
 			<button type="submit" target="_blank"  class="btn-o"> <i class="fa fa-plus"></i> Subir </button>
 		</form>
-     <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v pull-right"></span></a>
-          <ul class="dropdown-menu pull-right">
-            <li><a href="#">Inbox<i class="fa fa-inbox"></i></a></li>
-            <li><a href="#">Cerrar Sesión <i class="fa fa-sign-out"></i></a></li>
-          </ul>
-        </li>
-      </ul>
   </div>
   </div>
     </li>
@@ -61,9 +52,11 @@
 		<li>
 			<div class="link"><i class="fa fa-heartbeat"></i>Información Medica<i class="fa fa-chevron-down"></i></div>
 			<ul class="submenu">
-        <li><a>Estado: <span>Saludable</span></a></li>
-        <li><a>Grupo Sanguíneo: <span>O</span></a></li>
-				<li><a>RH: <span>Positivo(+)</span></a></li>
+				<form class="" action="actualizar3" method="post">
+	        <li>Estado: <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_salud']; ?>"></li>
+					<li>RH: <input type="text" name="data[]" style="background-color:#444359" value="<?php echo $usuario['usu_rh']; ?>"></li>
+					<button target="_blank"  class="btn-o" type="submit" name="button">Actualizar</button>
+				</form>
 			</ul>
 		</li>
 		<li><div class="link"><i class="fa fa-cogs"></i>Configuración<i class="fa fa-chevron-down"></i></div>

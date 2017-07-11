@@ -17,6 +17,7 @@ RewriteRule ^completar2$     ?c=usu&a=crearCompletar2
 RewriteRule ^completar3$     ?c=usu&a=crearCompletar3
 RewriteRule ^actualizar1$     ?c=perfil&a=actualizar1
 RewriteRule ^actualizar2$     ?c=perfil&a=actualizar2
+RewriteRule ^actualizar3$     ?c=perfil&a=actualizar3
 RewriteRule ^actualizar4$     ?c=perfil&a=actualizar4
 RewriteRule ^mi_perfil-nulo$       ?c=perfil&msn=Campos_Nulos
 RewriteRule ^mi_perfil-pass$       ?c=perfil&msn=Contraseña_Invalida

@@ -82,6 +82,7 @@ class UsuController{
       unlink("views/assets/img/usuario/$folder/$dir");
     }
     $this->UsuarioM->usuarioImagen($data);
+    header("Location:mi_perfil");
   }
   public function recoverPass(){
     require_once 'views/include/header.php';
@@ -130,7 +131,7 @@ class UsuController{
     if ($p==1) {
       $return = array(false,"campos nulos");
     }else{
-      $data[2]=$_SESSION["user"]["id"];
+      $data[4]=$_SESSION["user"]["id"];
       $result=$this->UsuarioM->updateUsuarioById2($data);
       $return = array(true,"");
     }

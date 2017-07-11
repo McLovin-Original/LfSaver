@@ -49,6 +49,24 @@ class PerfilController{
       header("Location:mi_perfil");
     }
   }
+  public function actualizar3(){
+    $data = $_POST["data"];
+    for ($i=0; $i <count($data) ; $i++) {
+      if (empty($data[$i])) {
+        $p=1;
+        break;
+      }else{
+        $p=0;
+      }
+    }
+    if ($p==1) {
+      header("Location:mi_perfil-nulo");
+    }else{
+      $data[2]=$_SESSION["user"]["id"];
+      $this->PerfilM->updateUsuario3($data);
+      header("Location:mi_perfil");
+    }
+  }
   public function actualizar4(){
     $data = $_POST["data"];
     if (empty($data[0])) {

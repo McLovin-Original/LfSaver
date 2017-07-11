@@ -23,9 +23,9 @@ class UsuModel{
 
   public function usuarioCreate($data){
     try {
-      $sql="INSERT INTO usuario VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+      $sql="INSERT INTO usuario VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
       $query=$this->pdo->prepare($sql);
-      $query->execute(array($data[5],$data[0],$data[1],$data[7],$data[8],$data[8],$data[8],$data[8],$data[8],$data[8],$data[8],$data[8],$data[8],$data[9]));
+      $query->execute(array($data[5],$data[0],$data[1],$data[7],$data[8],$data[8],$data[8],$data[8],$data[8],$data[8],$data[8],$data[8],$data[8],$data[9],$data[8],$data[8]));
       $sql="INSERT INTO acceso VALUES(?,?,?,?,?)";
       $query=$this->pdo->prepare($sql);
       $query->execute(array($data[6],$data[2],$data[3],$data[10],$data[5]));
@@ -71,9 +71,9 @@ class UsuModel{
   }
   public function updateUsuarioById2($data){
     try {
-      $sql = "UPDATE usuario SET usu_peso = ?,usu_altura = ? WHERE usu_id= ?";
+      $sql = "UPDATE usuario SET usu_peso = ?,usu_altura = ?,usu_rh = ?,usu_salud = ? WHERE usu_id= ?";
       $query = $this->pdo->prepare($sql);
-      $query->execute(array($data[0],$data[1],$data[2]));
+      $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4]));
     } catch (PDOException $e) {
       $cod = $e->getCod();
       $file = $e->getFile();
@@ -140,6 +140,19 @@ class UsuModel{
   public function updateUsuario2($data){
     try {
       $sql = "UPDATE usuario SET usu_altura = ?,usu_peso = ? WHERE usu_id= ?";
+      $query = $this->pdo->prepare($sql);
+      $query->execute(array($data[0],$data[1],$data[2]));
+    } catch (PDOException $e) {
+      $cod = $e->getCod();
+      $file = $e->getFile();
+      $line = $e->getLine();
+      $text = $e->getMessage();
+      DataBase::errorLog($cod,$file,$line,$text);
+    }
+  }
+  public function updateUsuario3($data){
+    try {
+      $sql = "UPDATE usuario SET usu_rh = ?,usu_salud = ? WHERE usu_id= ?";
       $query = $this->pdo->prepare($sql);
       $query->execute(array($data[0],$data[1],$data[2]));
     } catch (PDOException $e) {
