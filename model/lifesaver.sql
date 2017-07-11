@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-07-2017 a las 04:33:13
+-- Tiempo de generación: 11-07-2017 a las 06:53:04
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -39,7 +39,8 @@ CREATE TABLE `acceso` (
 --
 
 INSERT INTO `acceso` (`acc_id`, `acc_email`, `acc_password`, `acc_tour`, `usu_id`) VALUES
-('jCSfmhsjJdlVhSDGkApfpDhzlaQsui', 'jprestrepo94@misena.edu.co', '$2y$10$udB2LyKtLqG3xNBMNPE.0OQPLZN9VZR9Pkhnz2hsZPbaSvSVIelya', 1, '9JDZ9NS2iQmrFh7iCsa1eCD1CMJBvc'),
+('iLReCDYt1oT7fM46KbjQGiF47QxYmz', 'pablito@gmail.com', '$2y$10$mtlDrLLI0iD55AEdVQYXKudL1/4FglKncMmu6fghYcAtS2XTt9Khu', 1, 'N8pMBubF5xCJt4CIzqiQCAKPrV2Tpq'),
+('jCSfmhsjJdlVhSDGkApfpDhzlaQsui', 'jprestrepo94@misena.edu.co', '$2y$10$hdrPgz.iFuvBxDDjgjJo2e/bIsTQch/CfZGJO3KyaTwuTaVpDZT.m', 1, '9JDZ9NS2iQmrFh7iCsa1eCD1CMJBvc'),
 ('RInfq8beHf3lz8IbfTeGYr2KLVBtIH', 'pablofrg98@gmail.com', '$2y$10$ZPKMlm4po1qi/XxuRgbeCe/zZNkPE18v/ScTGKu7stQc6EClYyftK', 1, '9GbNxanSqGVYgvSxvfrXX6Qe0DO3Gj'),
 ('s2v7RS4UMDKORJES7Hsu97sTh5KNvN', 'decardona34@misena.edu.co', '$2y$10$gr4lPtUBrRbORhe.2tp9ruIqyCr0YKHzlvaD3Pa1vs2L5ixTGQY0O', 0, 'oRKjnACL3aTcKPYxZtDMOiqIv2Ijjp'),
 ('tyvybCRApHjkQBMQkLQRblXVLtmpqi', 'ejemplo@gmail.com', '$2y$10$SkId8uMZlq.m09hz9u.eIODTXONga8W62U5wruqU7aLSzuojmlU8i', 1, 'i1eUZ3KyPidUsftY8Cy3S8AdHMM46x'),
@@ -64,7 +65,7 @@ CREATE TABLE `clinica` (
 --
 
 INSERT INTO `clinica` (`cli_id`, `cli_nombre`, `cli_direccion`, `cli_telefono`) VALUES
-('hbsItJO7DkCFrjETYc0qUERvQv7pZZ', 'w', 'q', '1');
+('hbsItJO7DkCFrjETYc0qUERvQv7pZZ', 'Las vegas', 'Cr 66', '292');
 
 -- --------------------------------------------------------
 
@@ -106,20 +107,23 @@ CREATE TABLE `usuario` (
   `usu_altura` int(11) DEFAULT NULL,
   `usu_peso` int(11) DEFAULT NULL,
   `usu_carnet` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `usu_imagen` varchar(100) COLLATE utf8_spanish_ci NOT NULL
+  `usu_imagen` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `usu_rh` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `usu_salud` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`usu_id`, `usu_nombre`, `usu_apellido`, `rol_id`, `usu_tipo`, `usu_documento`, `usu_nacimiento`, `usu_sexo`, `usu_direccion`, `usu_telefono`, `usu_altura`, `usu_peso`, `usu_carnet`, `usu_imagen`) VALUES
-('9GbNxanSqGVYgvSxvfrXX6Qe0DO3Gj', 'Juan', 'restrepo', 'prueba', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'default.png'),
-('9JDZ9NS2iQmrFh7iCsa1eCD1CMJBvc', 'Juan Panlo', 'Restrepo Garcia', 'admin', 'TI', 98062003049, '1998-06-20', NULL, 'Cr 47  40 - 63', 5881275, 178, 62, 'NO', '782 south winston ave.oceanside, carsvp to jules at 848.389.2910.png'),
-('DVBbxKgz0zlZoahDOjAFBUOXAT4Nnn', 'des', 'pa', 'prueba', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'default.png'),
-('DvOJrmlu4HRClP7uCdfGFuryFjlF68', 'ss', 'ss', 'prueba', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'default.png'),
-('i1eUZ3KyPidUsftY8Cy3S8AdHMM46x', 'pabliyo', 'el pillo', 'prueba', 'CC', 1036679990, NULL, NULL, 'Cr 47  40 - 63', 5881275, 11, 11, 'NO', 'default.png'),
-('oRKjnACL3aTcKPYxZtDMOiqIv2Ijjp', 'daniel', 'cardona', 'prueba', 'CC', 1, NULL, NULL, '2', 1, 2, 1, NULL, 'default.png');
+INSERT INTO `usuario` (`usu_id`, `usu_nombre`, `usu_apellido`, `rol_id`, `usu_tipo`, `usu_documento`, `usu_nacimiento`, `usu_sexo`, `usu_direccion`, `usu_telefono`, `usu_altura`, `usu_peso`, `usu_carnet`, `usu_imagen`, `usu_rh`, `usu_salud`) VALUES
+('9GbNxanSqGVYgvSxvfrXX6Qe0DO3Gj', 'Juan', 'restrepo', 'prueba', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', NULL, NULL),
+('9JDZ9NS2iQmrFh7iCsa1eCD1CMJBvc', 'Juan Pablo', 'Restrepo Garcia', 'admin', 'TI', 1136792, '1997-06-20', NULL, 'Cr 47  40 - 63', 56738291, 177, 60, '173333', '782 south winston ave.oceanside, carsvp to jules at 848.389.2910.png', 'Enfermo', 'O-'),
+('DVBbxKgz0zlZoahDOjAFBUOXAT4Nnn', 'des', 'pa', 'prueba', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', NULL, NULL),
+('DvOJrmlu4HRClP7uCdfGFuryFjlF68', 'ss', 'ss', 'prueba', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', NULL, NULL),
+('i1eUZ3KyPidUsftY8Cy3S8AdHMM46x', 'pabliyo', 'el pillo', 'prueba', 'CC', 1036679990, NULL, NULL, 'Cr 47  40 - 63', 5881275, 11, 11, 'NO', 'default.png', NULL, NULL),
+('N8pMBubF5xCJt4CIzqiQCAKPrV2Tpq', 'Jeronimo', 'Garcia Ortiz', 'prueba', 'CC', 1036679990, '1998-06-20', NULL, 'Cr 47 # 40 - 63', 3046143729, 178, 63, '15623', 'ddd.png', 'O+', 'Regular'),
+('oRKjnACL3aTcKPYxZtDMOiqIv2Ijjp', 'daniel', 'cardona', 'prueba', 'CC', 1, NULL, NULL, '2', 1, 2, 1, NULL, 'default.png', NULL, NULL);
 
 --
 -- Índices para tablas volcadas
