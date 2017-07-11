@@ -21,7 +21,8 @@ $("#frm_completar1").submit(function(e){
     var datacomp1=[$("#tipo_comp1").val(),
                    $("#docu_comp1").val(),
                    $("#dire_comp1").val(),
-                   $("#tele_comp1").val()];
+                   $("#tele_comp1").val(),
+                   $("#fech_comp1").val()];
     $.post("completar1",{datacomp1:datacomp1},function(data){
       var data = JSON.parse(data);
       if (data[0]==true) {

@@ -31,8 +31,8 @@
             <input type="number" class="r-form-Usuario form-control " id="tele_comp1" placeholder="Ingresa tu Número Telefónico" required>
           </div>
           <div class="form-group ">
-            <label class="sr-only">Fecha Nacimiento</label>
-            <input type="date" class="r-form-Usuario form-control " id="tele_comp1" placeholder="Ingresa tu Número Telefónico" required>
+            <label for="fech_comp1">Fecha Nacimiento</label>
+            <input type="date" class="r-form-Usuario form-control " id="fech_comp1"  required>
           </div>
           <button type="submit" name="button" id="btnCompletar" class="btn btn-primary">SIGUIENTE <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
         </form>

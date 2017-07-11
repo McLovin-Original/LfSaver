@@ -51,13 +51,11 @@ class PerfilController{
   }
   public function actualizar4(){
     $data = $_POST["data"];
-    for ($i=0; $i <count($data) ; $i++) {
-      if (empty($data[$i])) {
-        $p=1;
-        break;
-      }else{
-        $p=0;
-      }
+    if (empty($data[0])) {
+      $p=1;
+      break;
+    }else{
+      $p=0;
     }
     if ($p==1) {
       header("Location:mi_perfil-nulo");
@@ -68,6 +66,7 @@ class PerfilController{
         $data[1] = password_hash($data[1],PASSWORD_DEFAULT);
         $data[2]=$_SESSION["user"]["id"];
         $this->PerfilM->updateUsuario4($data);
+        header("Location:mi_perfil");
       }
     }
   }
