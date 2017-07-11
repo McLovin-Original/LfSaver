@@ -6,6 +6,7 @@ RewriteRule ^dashboard$      ?c=main&a=dashboard
 RewriteRule ^login$          ?c=main&a=login
 
 RewriteRule ^registro$       ?c=usu
+RewriteRule ^donacion$       ?c=donacion
 RewriteRule ^crear$          ?c=usu&a=create
 RewriteRule ^validar-email$  ?c=usu&a=validarEmail
 RewriteRule ^validar-usuario$  ?c=main&a=validarEmail
