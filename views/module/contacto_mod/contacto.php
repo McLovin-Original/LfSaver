@@ -10,16 +10,12 @@
 				</div>
 				<div class="col-md-12 contact-middle">
 					<h2>Envía tu mensaje!</h2>
-					<form action="#" method="post" >
-					<div class="form-agileinfo">
-						<input type="text" name="" placeholder="Tu nombre..." required="" />
-						<input type="email" name="" placeholder="Tu email..." required="" />
-					</div>
-					<div class="form-agileits-w3layouts">
-						<textarea  name="" placeholder="Tu mensaje..." required="" ></textarea>
-							<input type="submit"   value="ENVIAR MENSAJE  ">
-					</div>
-					<div class="clearfix"></div>
+					<form action="index.php?c=contacto&a=sendEmailContact" method="post" >
+						<div class="form-agileits-w3layouts ">
+							<textarea  name="" placeholder="Tu mensaje..." required=""></textarea>
+						</div>
+						<input type="submit"   value="ENVIAR MENSAJE  ">
+						<div class="clearfix"></div>
 					</form>
 				</div>
 			</div>
