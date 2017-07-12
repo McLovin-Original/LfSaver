@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-07-2017 a las 06:53:04
+-- Tiempo de generación: 12-07-2017 a las 03:57:54
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -70,6 +70,30 @@ INSERT INTO `clinica` (`cli_id`, `cli_nombre`, `cli_direccion`, `cli_telefono`) 
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `donacion`
+--
+
+CREATE TABLE `donacion` (
+  `don_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `don_fisica` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `don_mental` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `don_tatuaje` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `don_donacion` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `don_tipo` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `usu_id` varchar(30) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `donacion`
+--
+
+INSERT INTO `donacion` (`don_id`, `don_fisica`, `don_mental`, `don_tatuaje`, `don_donacion`, `don_tipo`, `usu_id`) VALUES
+('fUYtkVPKqZAS5tfH7CFFpikL81X8ji', 'NO', 'Bipolaridad', 'NO', 'Sangre', 'NO', '9JDZ9NS2iQmrFh7iCsa1eCD1CMJBvc'),
+('jZY7ckJiJQNf15o2yfEp3fiyS8rIJE', 'ANEMIA', 'NO', 'SI', 'Sangre', 'Segentos', '9JDZ9NS2iQmrFh7iCsa1eCD1CMJBvc');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `rol`
 --
 
@@ -118,7 +142,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`usu_id`, `usu_nombre`, `usu_apellido`, `rol_id`, `usu_tipo`, `usu_documento`, `usu_nacimiento`, `usu_sexo`, `usu_direccion`, `usu_telefono`, `usu_altura`, `usu_peso`, `usu_carnet`, `usu_imagen`, `usu_rh`, `usu_salud`) VALUES
 ('9GbNxanSqGVYgvSxvfrXX6Qe0DO3Gj', 'Juan', 'restrepo', 'prueba', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', NULL, NULL),
-('9JDZ9NS2iQmrFh7iCsa1eCD1CMJBvc', 'Juan Pablo', 'Restrepo Garcia', 'admin', 'TI', 1136792, '1997-06-20', NULL, 'Cr 47  40 - 63', 56738291, 177, 60, '173333', '782 south winston ave.oceanside, carsvp to jules at 848.389.2910.png', 'Enfermo', 'O-'),
+('9JDZ9NS2iQmrFh7iCsa1eCD1CMJBvc', 'Juan Pablo', 'Restrepo Garcia', 'admin', 'TI', 1136792, '1997-06-20', NULL, 'Cr 47  40 - 63', 56738291, 177, 60, '173333', 'as.jpg', 'Enfermo', 'O-'),
 ('DVBbxKgz0zlZoahDOjAFBUOXAT4Nnn', 'des', 'pa', 'prueba', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', NULL, NULL),
 ('DvOJrmlu4HRClP7uCdfGFuryFjlF68', 'ss', 'ss', 'prueba', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'default.png', NULL, NULL),
 ('i1eUZ3KyPidUsftY8Cy3S8AdHMM46x', 'pabliyo', 'el pillo', 'prueba', 'CC', 1036679990, NULL, NULL, 'Cr 47  40 - 63', 5881275, 11, 11, 'NO', 'default.png', NULL, NULL),
@@ -143,6 +167,13 @@ ALTER TABLE `clinica`
   ADD PRIMARY KEY (`cli_id`);
 
 --
+-- Indices de la tabla `donacion`
+--
+ALTER TABLE `donacion`
+  ADD PRIMARY KEY (`don_id`),
+  ADD KEY `usu_id` (`usu_id`);
+
+--
 -- Indices de la tabla `rol`
 --
 ALTER TABLE `rol`
@@ -164,6 +195,12 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `acceso`
   ADD CONSTRAINT `acceso_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuario` (`usu_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `donacion`
+--
+ALTER TABLE `donacion`
+  ADD CONSTRAINT `donacion_ibfk_1` FOREIGN KEY (`usu_id`) REFERENCES `usuario` (`usu_id`);
 
 --
 -- Filtros para la tabla `usuario`

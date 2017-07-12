@@ -151,6 +151,73 @@ $("#ema_login").focus(function(){
   $("#btn_login").attr("disabled",false);
 });
 
+//-----------------------LISTA DESPEGLABE DONACION 1
+$("#enf_no").focus(function(){
+  $("#agileits_select1").hide();
+});
+$("#enf_si").focus(function(){
+  $("#agileits_select1").show();
+});
+//-----------------------LISTA DESPEGLABE DONACION 2
+$("#men_no").focus(function(){
+  $("#agileits_select2").hide();
+});
+$("#men_si").focus(function(){
+  $("#agileits_select2").show();
+});
+//-----------------------LISTA DESPEGLABE DONACION 3
+$("#don_no").focus(function(){
+  $("#agileits_select3").hide();
+});
+$("#don_si").focus(function(){
+  $("#agileits_select3").show();
+});
+//-----------------------LISTA DESPEGLABE DONACION 4
+$("#tip_no").focus(function(){
+  $("#agileits_select4").hide();
+});
+$("#tip_si").focus(function(){
+  $("#agileits_select4").show();
+});
+//------------------------ DONACION
+$("#frm_don").submit(function(e){
+  e.preventDefault();
+  if ($(this).parsley().isValid()){
+    if (document.getElementById("enf_si").checked== true) {
+        var enf=$("#agileits_select1").val();
+    }else{
+        var enf="NO";
+    }
+    if (document.getElementById("men_si").checked== true) {
+        var men=$("#agileits_select2").val();
+    }else{
+        var men="NO";
+    }
+    if (document.getElementById("tat_si").checked== true) {
+        var tat="SI";
+    }else{
+        var tat="NO";
+    }
+    if (document.getElementById("don_si").checked== true) {
+        var don=$("#agileits_select3").val();
+    }else{
+        var don="NO";
+    }
+    if (document.getElementById("tip_si").checked== true) {
+        var tip=$("#agileits_select4").val();
+    }else{
+        var tip="NO";
+    }
+    var donacion=[enf,men,tat,don,tip];
+    $.post("crear-donacion",{data:donacion},function(data){
+      var data = JSON.parse(data);
+      if (data[0]==true) {
+        alert("Donacion Enviada");
+        document.location.href=data[1];
+      }
+    });
+  }
+});
 //---------------------------- LOGUEO
 
 $("#frm_login").submit(function(e){
