@@ -12,7 +12,7 @@
 					<h2>Envía tu mensaje!</h2>
 					<form action="index.php?c=contacto&a=sendEmailContact" method="post" >
 						<div class="form-agileits-w3layouts ">
-							<textarea  name="" placeholder="Tu mensaje..." required=""></textarea>
+							<textarea  name="contacto" placeholder="Tu mensaje..." required=""></textarea>
 						</div>
 						<input type="submit"   value="ENVIAR MENSAJE  ">
 						<div class="clearfix"></div>

@@ -2,10 +2,11 @@
 class DataBase{
 
   private static $dbhost="localhost";
-  private static $dbname="lifesaver";
-  private static $dbuser="root";
-  private static $dbpass="";
+  private static $dbname="lfsaverc_lfsaver";
+  private static $dbuser="lfsaverc_user";
+  private static $dbpass="lfsaver123456";
   private static $dbconn=null;
+
 
   public static function connect(){
     if(self::$dbconn==null){
