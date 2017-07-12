@@ -1,0 +1,40 @@
+RewriteEngine on
+
+RewriteRule ^inicio$         index.php
+RewriteRule ^error$          ?c=main&a=error
+RewriteRule ^dashboard$      ?c=main&a=dashboard
+RewriteRule ^login$          ?c=main&a=login
+
+RewriteRule ^registro$       ?c=usu
+RewriteRule ^donacion$       ?c=donacion
+RewriteRule ^crear-donacion$       ?c=donacion&a=create
+RewriteRule ^crear$          ?c=usu&a=create
+RewriteRule ^validar-email$  ?c=usu&a=validarEmail
+RewriteRule ^validar-usuario$  ?c=main&a=validarEmail
+RewriteRule ^validacion$     ?c=usu&a=userAut
+RewriteRule ^CerrarSesion$   ?c=usu&a=logout
+RewriteRule ^completar$      ?c=usu&a=completar1
+RewriteRule ^completar1$     ?c=usu&a=crearCompletar1
+RewriteRule ^completar2$     ?c=usu&a=crearCompletar2
+RewriteRule ^completar3$     ?c=usu&a=crearCompletar3
+RewriteRule ^actualizar1$     ?c=perfil&a=actualizar1
+RewriteRule ^actualizar2$     ?c=perfil&a=actualizar2
+RewriteRule ^actualizar3$     ?c=perfil&a=actualizar3
+RewriteRule ^actualizar4$     ?c=perfil&a=actualizar4
+RewriteRule ^mi_perfil-nulo$       ?c=perfil&msn=Campos_Nulos
+RewriteRule ^mi_perfil-pass$       ?c=perfil&msn=Contraseña_Invalida
+RewriteRule ^recover$        ?c=usu&a=recoverPass
+RewriteRule ^valCorreo$      ?c=usu&a=validarEmail
+RewriteRule ^recover/email$  ?c=usu&a=recover
+RewriteRule ^newpass$        ?c=usu&a=newpass
+RewriteRule ^change$         ?c=usu&a=verificar_email
+RewriteRule ^crear-imagen$   ?c=usu&a=imagen
+RewriteRule ^enviar$         ?c=usu&a=enviar_email
+RewriteRule ^Save$           ?c=usu&a=token
+RewriteRule ^contacto$       ?c=contacto
+RewriteRule ^legislacion$    ?c=estatuto
+RewriteRule ^mi_perfil$      ?c=perfil
+RewriteRule ^clinicas$      ?c=clinica
+RewriteRule ^crear-clinica$      ?c=clinica&a=create
+RewriteRule ^update-clinica$      ?c=clinica&a=update
+RewriteRule ^gestionar-clinicas$      ?c=clinica&a=gestionarClinica
